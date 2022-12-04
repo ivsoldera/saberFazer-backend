@@ -3,4 +3,5 @@ export default interface IProdutoPedido {
     id_produto: number;
     id_pedido: number;
     quantidade: number;
+    status: number;
 }

@@ -1,6 +1,5 @@
 import { Request, Response, Router } from "express";
 import pedidoService from "../services/pedido.service";
-import authMiddleware from '../middlewares/authMiddleware';
 const pedidoController = Router();
 
 pedidoController.post("/", async (req: Request, res: Response): Promise<Response> => {
@@ -15,7 +14,7 @@ pedidoController.get("/", async (req: Request, res: Response): Promise<Response>
     return res.status(200).json(pedidos);
 })
 
-pedidoController.get("/:id", authMiddleware, async (req: Request, res: Response): Promise<Response> => {
+pedidoController.get("/:id", async (req: Request, res: Response): Promise<Response> => {
     const { id } = req.params;
     const pedidos = await pedidoService.getPedidosById(Number(id));
 

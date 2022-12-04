@@ -1,7 +1,6 @@
 import IProdutoPedido from "../interfaces/produtoPedido.interface";
 import produtoPedidoModel from "../models/produtoPedido.model";
 import HttpException from "../utils/httpException";
-import Token from "../utils/token";
 
 
 const createProdutoPedido = async ( produtoPedido: IProdutoPedido ): Promise<IProdutoPedido> => {
