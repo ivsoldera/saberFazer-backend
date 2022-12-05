@@ -1,5 +1,7 @@
 import { Request, Response, Router } from "express";
 import produtoService from "../services/produto.service";
+import authMiddleware from '../middlewares/authMiddleware';
+
 const produtoController = Router();
 
 produtoController.post("/", async (req: Request, res: Response): Promise<Response> => {

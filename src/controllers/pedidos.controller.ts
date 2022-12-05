@@ -1,5 +1,8 @@
 import { Request, Response, Router } from "express";
 import pedidoService from "../services/pedido.service";
+import authMiddleware from '../middlewares/authMiddleware';
+
+
 const pedidoController = Router();
 
 pedidoController.post("/", async (req: Request, res: Response): Promise<Response> => {
