@@ -33,7 +33,7 @@ const getPedidoNome = async (nome: string): Promise<IPedido> => {
 }
 const update = async (id: number, pedido: IPedido): Promise<ResultSetHeader> => {
     const [result] = await connection.execute<ResultSetHeader>(
-        "UPDATE pedidos SET data_hora=?, nome_pessoa=?, cpf_pessoa=?, forma_pag, endereco=?, confirmado=?, obs=?, valor=? WHERE id_pedido=?",
+        "UPDATE pedidos SET data_hora=?, nome_pessoa=?, cpf_pessoa=?, forma_pag=?, endereco=?, confirmado=?, obs=?, valor=? WHERE id_pedido=?",
         [pedido.data_hora, pedido.nome_pessoa, pedido.cpf_pessoa, pedido.forma_pag, pedido.endereco, pedido.confirmado, pedido.obs, pedido.valor, id]
     );
 
