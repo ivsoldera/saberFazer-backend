@@ -2,3 +2,4 @@ node_modules
 Project.postman_collection.json
 project.sql
 public/*
+.env
